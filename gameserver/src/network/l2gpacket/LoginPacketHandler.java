@@ -1,4 +1,4 @@
-package network;
+package network.l2gpacket;
 
 import org.jboss.netty.channel.SimpleChannelUpstreamHandler;
 
