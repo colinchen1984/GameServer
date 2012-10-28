@@ -1,7 +1,6 @@
 package network.c2gpacket;
 
 import network.PacketID;
-import network.PacketIOHelper;
 import network.ReceivedPacket;
 import network.SendPacket;
 import network.g2cpacket.G2CLatencyPacket;

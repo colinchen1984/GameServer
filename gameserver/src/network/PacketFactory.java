@@ -14,13 +14,20 @@ import java.util.Map;
 public class PacketFactory
 {
 	final Map<Short, Packet> packetFactory = new HashMap<Short, Packet>(128);
-	boolean useCachePacket = false;
+	Map<Thread, Map<Short, Packet>> cachedPacketFactory = null;
 
 	public PacketFactory(boolean useCachePacket)
 	{
-		this.useCachePacket = useCachePacket;
+		if(useCachePacket)
+		{
+			cachedPacketFactory = new HashMap<Thread, Map<Short, Packet>>(8);
+		}
 	}
 
+	//單獨爲每一個線程創建一個專屬與該線程的packet map
+	//在每個線程處理網絡包時，同樣的ID的網絡包在一個線程內
+	//的任意時刻指可能出現一次，所以可以通過cachedPacketFactory
+	//來避免不斷的創建新的Packet object
 	public Packet getPacketByID(short packetid)
 	{
 		final Packet packet = packetFactory.get(packetid);
@@ -28,7 +35,33 @@ public class PacketFactory
 		{
 			return packet;
 		}
-		return useCachePacket ? packet : packet.getPacket();
+
+		if(null == cachedPacketFactory)
+		{
+			return packet.getPacket();
+		}
+
+		final Thread thread = Thread.currentThread();
+		Map<Short, Packet> packetMap = cachedPacketFactory.get(thread);
+		Packet result;
+		if(null == packetMap)
+		{
+			packetMap = new HashMap<Short, Packet>(128);
+			synchronized (cachedPacketFactory)
+			{
+				cachedPacketFactory.put(thread, packetMap);
+			}
+			result = packet.getPacket();
+			packetMap.put(packetid, result);
+			return result;
+		}
+		result = packetMap.get(packetid);
+		if(null == result)
+		{
+			result = packet.getPacket();
+			packetMap.put(packetid, result);
+		}
+		return result;
 
 	}
 
