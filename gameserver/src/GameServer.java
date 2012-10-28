@@ -1,6 +1,6 @@
-import network.ClientChannelFactory;
 import network.ClientChannelPipelineFactory;
 import org.jboss.netty.bootstrap.ServerBootstrap;
+import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 
 import java.net.InetSocketAddress;
 
@@ -22,7 +22,7 @@ public class GameServer
 
 		//初始化网络
 		ServerBootstrap bootstrap = new ServerBootstrap(
-				new ClientChannelFactory());
+				new NioServerSocketChannelFactory());
 
 		// Set up the pipeline factory.
 		bootstrap.setPipelineFactory(new ClientChannelPipelineFactory());

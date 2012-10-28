@@ -15,4 +15,8 @@ public class L2GPacketFactory extends PacketFactory
 
 	}
 
+	public L2GPacketFactory(boolean useCachePacket)
+	{
+		super(useCachePacket);
+	}
 }

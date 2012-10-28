@@ -1,6 +1,7 @@
 package network.c2gpacket;
 
 import network.Packet;
+import network.PacketFactory;
 import network.ReceivedPacketHanlder;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.ExceptionEvent;
@@ -14,7 +15,7 @@ import org.jboss.netty.channel.ExceptionEvent;
  */
 public class ClientPacketHandler extends ReceivedPacketHanlder
 {
-	private static C2GPacketFactory packetFactory = new C2GPacketFactory();
+	private static PacketFactory packetFactory = new C2GPacketFactory(false);
 
 	@Override
 	protected Packet getPacketByID(short id)

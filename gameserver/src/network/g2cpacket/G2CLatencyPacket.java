@@ -1,7 +1,7 @@
 package network.g2cpacket;
 
 import network.PacketID;
-import network.SendHelpBuffer;
+import network.PacketIOHelper;
 import network.SendPacket;
 
 /**
@@ -27,7 +27,7 @@ public class G2CLatencyPacket extends SendPacket
 	}
 
 	@Override
-	protected void writeData2Buffer(SendHelpBuffer buffer)
+	protected void writeData2Buffer(PacketIOHelper buffer)
 	{
 		buffer.writeLong(sendtime);
   		buffer.writeLong(0);

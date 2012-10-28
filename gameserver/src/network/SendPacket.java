@@ -12,12 +12,12 @@ import org.jboss.netty.channel.Channel;
  */
 public abstract class SendPacket implements Packet, Cloneable
 {
-	public Object getPacket()
+	public Packet getPacket()
 	{
-		Object result = null;
+		Packet result = null;
 		try
 		{
-			result = super.clone();
+			result = (Packet) super.clone();
 		}
 		catch(CloneNotSupportedException e)
 		{
@@ -29,17 +29,17 @@ public abstract class SendPacket implements Packet, Cloneable
 
 	public void send(Channel channel)
 	{
-		SendHelpBuffer helpBuffer = new SendHelpBuffer();
-		writeData2Buffer(helpBuffer);
-		int needBytes = helpBuffer.getNeedBytes() + 4;
-		helpBuffer.reset();
+		PacketIOHelper helper = new PacketIOHelper();
+		writeData2Buffer(helper);
+		int needBytes = helper.getNeedBytes() + 4;
+		helper.reset();
 		ChannelBuffer buffer = channel.getConfig().getBufferFactory().getBuffer(needBytes);
 		buffer.writeShort(needBytes - 2);
 		buffer.writeShort(getPacketID());
-		helpBuffer.setBuffer(buffer);
-		writeData2Buffer(helpBuffer);
+		helper.setBuffer(buffer);
+		writeData2Buffer(helper);
 		channel.write(buffer);
 	}
 
-	protected abstract void writeData2Buffer(SendHelpBuffer buffer);
+	protected abstract void writeData2Buffer(PacketIOHelper buffer);
 }

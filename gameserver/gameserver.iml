@@ -95,7 +95,9 @@
           <root url="jar://$MODULE_DIR$/libs/commons-lang-2.6.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/libssrc/commons-lang-2.6-sources.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">

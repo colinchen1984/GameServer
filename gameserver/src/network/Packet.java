@@ -7,9 +7,9 @@ package network;
  * Time: 下午10:56
  * To change this template use File | Settings | File Templates.
  */
-public interface Packet
+public interface Packet extends Cloneable
 {
-	public Object getPacket();
+	public Packet getPacket();
 
 	public short getPacketID();
 }

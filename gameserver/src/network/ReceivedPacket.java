@@ -10,16 +10,16 @@ import org.jboss.netty.channel.Channel;
  * Time: 下午10:58
  * To change this template use File | Settings | File Templates.
  */
-public abstract class ReceivedPacket implements Packet, Cloneable
+public abstract class ReceivedPacket implements Packet
 {
 	private Channel channel;
 
-	public Object getPacket()
+	public Packet getPacket()
 	{
-		Object result = null;
+		Packet result = null;
 		try
 		{
-			result = super.clone();
+			result = (Packet)super.clone();
 		}
 		catch(CloneNotSupportedException e)
 		{

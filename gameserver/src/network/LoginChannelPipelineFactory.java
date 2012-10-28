@@ -1,5 +1,6 @@
 package network;
 
+import network.l2gpacket.LoginPacketHandler;
 import org.jboss.netty.buffer.HeapChannelBufferFactory;
 import org.jboss.netty.channel.*;
 import org.jboss.netty.channel.socket.DefaultSocketChannelConfig;

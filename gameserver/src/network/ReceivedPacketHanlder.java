@@ -17,13 +17,14 @@ import org.jboss.netty.channel.SimpleChannelUpstreamHandler;
 public abstract class ReceivedPacketHanlder extends SimpleChannelUpstreamHandler
 {
 	private static Log log = LogFactory.getLog(ReceivedPacketHanlder.class);
+
 	@Override
 	public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception
 	{
 		Object message = e.getMessage();
 		if(!(message instanceof ChannelBuffer))
 		{
-			throw new RuntimeException("PacketHandler can't handle meaage which type is" + message.getClass().getName());
+			throw new RuntimeException("PacketHandler can't handle message which type is" + message.getClass().getName());
 		}
 		log.info("Receive packet from " + e.getChannel().getAttachment());
 		ChannelBuffer buffer = (ChannelBuffer)message;

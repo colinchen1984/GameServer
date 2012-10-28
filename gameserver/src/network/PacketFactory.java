@@ -1,6 +1,7 @@
 package network;
 
-import org.apache.commons.collections.FastHashMap;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,21 +13,33 @@ import org.apache.commons.collections.FastHashMap;
 
 public class PacketFactory
 {
-	final FastHashMap packetFactory = new FastHashMap();
+	final Map<Short, Packet> packetFactory = new HashMap<Short, Packet>(128);
+	boolean useCachePacket = false;
 
+	public PacketFactory(boolean useCachePacket)
 	{
-		packetFactory.setFast(true);
+		this.useCachePacket = useCachePacket;
 	}
 
 	public Packet getPacketByID(short packetid)
 	{
-		final Packet packet = (Packet) packetFactory.get(packetid);
-		Packet result = null != packet ? (Packet) packet.getPacket() : null;
-		return result;
+		final Packet packet = packetFactory.get(packetid);
+		if(null == packet)
+		{
+			return packet;
+		}
+		return useCachePacket ? packet : packet.getPacket();
+
 	}
 
-	public void regiestePacket(Packet packet)
+	public void regiestePacket(Packet packet) throws RuntimeException
 	{
-		packetFactory.put(packet.getPacketID(), packet);
+		Short packetID = packet.getPacketID();
+		Packet old = packetFactory.get(packetID);
+		if(null != old)
+		{
+			throw new RuntimeException("packet id " + packetID + " is registed with packet " + old.getClass().getName());
+		}
+		packetFactory.put(packetID, packet);
 	}
 }
