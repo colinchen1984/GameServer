@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="71626357-0028-43a8-bb8f-63b1722c7337" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameserver.iws" afterPath="$PROJECT_DIR$/gameserver.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/network/PacketIOHelper.java" afterPath="$PROJECT_DIR$/src/network/PacketIOHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/network/c2gpacket/C2GLatencyPacket.java" afterPath="$PROJECT_DIR$/src/network/c2gpacket/C2GLatencyPacket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/network/g2cpacket/G2CLatencyPacket.java" afterPath="$PROJECT_DIR$/src/network/g2cpacket/G2CLatencyPacket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
     </list>
     <ignored path="gameserver.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,15 +96,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ReceivedPacketHanlder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/network/ReceivedPacketHanlder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="5" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SendPacket.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/network/SendPacket.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -110,37 +105,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameServer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameServer.java">
+      <file leaf-file-name="C2GLatencyPacket.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/network/c2gpacket/C2GLatencyPacket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="13" selection-start="370" selection-end="370" vertical-scroll-proportion="0.0">
+            <state line="30" column="14" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameserver.iml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameserver.iml">
+      <file leaf-file-name="PacketIOHelper.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/network/PacketIOHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="149" column="39" selection-start="2731" selection-end="2731" vertical-scroll-proportion="0.7109067">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameserver.ipr" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameserver.ipr">
+      <file leaf-file-name="AbstractChannelBuffer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/libssrc/netty-3.5.7.Final.zip!/netty-3.5.7.Final/src/main/java/org/jboss/netty/buffer/AbstractChannelBuffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gameserver.iws" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameserver.iws">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="445" column="0" selection-start="12810" selection-end="12810" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -173,15 +161,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -198,7 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/network/ClientChannelPipelineFactory.java" />
         <option value="$PROJECT_DIR$/src/network/ClientChannelFactory.java" />
         <option value="$PROJECT_DIR$/src/GameServer.java" />
         <option value="$PROJECT_DIR$/src/network/Packet.java" />
@@ -209,11 +187,12 @@
         <option value="$PROJECT_DIR$/src/network/c2gpacket/C2GPacketFactory.java" />
         <option value="$PROJECT_DIR$/src/network/ReceivedPacketHanlder.java" />
         <option value="$PROJECT_DIR$/src/network/SendPacket.java" />
-        <option value="$PROJECT_DIR$/src/network/g2cpacket/G2CLatencyPacket.java" />
         <option value="$PROJECT_DIR$/src/network/ReceivedPacket.java" />
         <option value="$PROJECT_DIR$/src/network/SendHelpBuffer.java" />
         <option value="$PROJECT_DIR$/src/network/PacketIOHelp.java" />
+        <option value="$PROJECT_DIR$/src/network/g2cpacket/G2CLatencyPacket.java" />
         <option value="$PROJECT_DIR$/src/network/PacketIOHelper.java" />
+        <option value="$PROJECT_DIR$/src/network/c2gpacket/C2GLatencyPacket.java" />
       </list>
     </option>
   </component>
@@ -510,59 +489,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
+              <option name="myItemId" value="libssrc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="netty-3.5.7.Final.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="netty" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="netty-3.5.7.Final.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="netty" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="buffer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="netty-3.5.7.Final.jar" />
+              <option name="myItemId" value="commons-lang3-3.1-sources.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -800,13 +731,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27715355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27715355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6704708" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42921013" sideWeight="0.78367877" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42821473" sideWeight="0.78367877" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5392297" sideWeight="0.21178757" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.49500713" order="2" side_tool="true" content_ui="tabs" />
@@ -814,10 +745,10 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32650074" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23778735" sideWeight="0.3071161" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2816092" sideWeight="0.42571786" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23778735" sideWeight="0.40699127" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2816092" sideWeight="0.56554306" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952926" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JavaDoc Browser" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -902,60 +833,9 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/network/l2gpacket/L2GPacketFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/l2gpacket/LoginPacketHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/LoginChannelPipelineFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/Packet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/PacketFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="33" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#303#318#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/ReceivedPacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="5" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/network/ReceivedPacketHanlder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="5" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/SendPacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="22" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1009,10 +889,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/SendPacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="22" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libssrc/netty-3.5.7.Final.zip!/netty-3.5.7.Final/src/main/java/org/jboss/netty/buffer/AbstractChannelBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="445" column="0" selection-start="12810" selection-end="12810" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/g2cpacket/G2CLatencyPacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="571" selection-end="571" vertical-scroll-proportion="1.2761021">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/c2gpacket/C2GLatencyPacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="14" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/1.6.0_37-b06-434.jdk/Contents/Home/src.jar!/src/java/lang/StringCoding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="150" column="19" selection-start="4348" selection-end="4348" vertical-scroll-proportion="0.61757106">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/1.6.0_37-b06-434.jdk/Contents/Home/src.jar!/src/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="482" column="32" selection-start="17484" selection-end="17484" vertical-scroll-proportion="0.4480946">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="8" column="10" selection-start="234" selection-end="234" vertical-scroll-proportion="0.22739018">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/PacketIOHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="39" selection-start="2731" selection-end="2731" vertical-scroll-proportion="0.7109067">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

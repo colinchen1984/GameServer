@@ -29,6 +29,7 @@ public class G2CLatencyPacket extends SendPacket
 	@Override
 	protected void writeData2Buffer(PacketIOHelper buffer)
 	{
+		buffer.writeString("chenlintest");
 		buffer.writeLong(sendtime);
   		buffer.writeLong(0);
 	}

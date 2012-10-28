@@ -135,7 +135,7 @@ public class PacketIOHelper
 		writeBytes(utf8, utf8.length);
 	}
 
-	protected String getString(ChannelBuffer buffer)
+	public static String getString(ChannelBuffer buffer)
 	{
 		short strLength = buffer.readShort();
 		if(0 == strLength)
