@@ -13,6 +13,8 @@ import org.jboss.netty.channel.Channel;
 public abstract class ReceivedPacket implements Packet
 {
 	private Channel channel;
+	private final String packetName = this.getClass().getName();
+
 
 	public Packet getPacket()
 	{
@@ -27,6 +29,12 @@ public abstract class ReceivedPacket implements Packet
 			result = null;
 		}
 		return result;
+	}
+
+	@Override
+	public String getPacketName()
+	{
+		return packetName;
 	}
 
 	public abstract void readFromBuffer(ChannelBuffer buff);

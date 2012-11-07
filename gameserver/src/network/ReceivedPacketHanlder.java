@@ -26,7 +26,6 @@ public abstract class ReceivedPacketHanlder extends SimpleChannelUpstreamHandler
 		{
 			throw new RuntimeException("PacketHandler can't handle message which type is" + message.getClass().getName());
 		}
-		log.info("Receive packet from " + e.getChannel().getAttachment());
 		ChannelBuffer buffer = (ChannelBuffer)message;
 		short packetDataLength = buffer.readShort();
 		short packetID = buffer.readShort();
@@ -36,6 +35,7 @@ public abstract class ReceivedPacketHanlder extends SimpleChannelUpstreamHandler
 			log.warn("Unkown packet with id " + packetID + "and data length is " + packetDataLength);
 			return;
 		}
+		log.info("Receive " + packet.getPacketName() + " from " + e.getChannel().getAttachment());
 		packet.setChannel(e.getChannel());
 		packet.readFromBuffer(buffer);
 		packet.run();

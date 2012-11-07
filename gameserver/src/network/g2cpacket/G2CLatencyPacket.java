@@ -15,11 +15,18 @@ public class G2CLatencyPacket extends SendPacket
 {
 
 	private long sendtime = 0;
-
+	private final String packetName = this.getClass().getName();
 	public G2CLatencyPacket(long sendtime)
 	{
 		this.sendtime = sendtime;
 	}
+
+	@Override
+	public String getPacketName()
+	{
+		return packetName;
+	}
+
 	@Override
 	public short getPacketID()
 	{

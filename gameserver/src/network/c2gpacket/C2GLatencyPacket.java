@@ -1,6 +1,7 @@
 package network.c2gpacket;
 
 import network.PacketID;
+import network.PacketIOHelper;
 import network.ReceivedPacket;
 import network.SendPacket;
 import network.g2cpacket.G2CLatencyPacket;
@@ -28,6 +29,8 @@ public class C2GLatencyPacket extends ReceivedPacket
 	public void readFromBuffer(ChannelBuffer buff)
 	{
 		sendTime = buff.readLong();
+		String str = PacketIOHelper.getString(buff);
+		str = PacketIOHelper.getString(buff);
 
 	}
 

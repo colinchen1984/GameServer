@@ -9,6 +9,8 @@ package network;
  */
 public interface Packet extends Cloneable
 {
+	public String getPacketName();
+
 	public Packet getPacket();
 
 	public short getPacketID();

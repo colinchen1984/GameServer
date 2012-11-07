@@ -1,5 +1,9 @@
 import network.ClientChannelPipelineFactory;
+import network.LoginChannelPipelineFactory;
+import org.jboss.netty.bootstrap.ClientBootstrap;
 import org.jboss.netty.bootstrap.ServerBootstrap;
+import org.jboss.netty.channel.ChannelFuture;
+import org.jboss.netty.channel.socket.nio.NioClientSocketChannelFactory;
 import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 
 import java.net.InetSocketAddress;
@@ -13,17 +17,33 @@ import java.net.InetSocketAddress;
  */
 public class GameServer
 {
+	static final private ServerBootstrap bootstrap = new ServerBootstrap(
+			new NioServerSocketChannelFactory());
+	//static final private ClientBootstrap logintrap = new ClientBootstrap(new NioClientSocketChannelFactory());
 	public static void main(String[] args) throws Exception
 	{
 
 		//读取各种配置
 		//初始化资源
 		//连接login
-
+		/*logintrap.setPipelineFactory(new LoginChannelPipelineFactory());
+		while (true)
+		{
+			try
+			{
+				ChannelFuture cf = logintrap.connect(new InetSocketAddress(11112));
+				cf.sync();
+				if(cf.isSuccess())
+				{
+					break;
+				}
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+		}*/
 		//初始化网络
-		ServerBootstrap bootstrap = new ServerBootstrap(
-				new NioServerSocketChannelFactory());
-
 		// Set up the pipeline factory.
 		bootstrap.setPipelineFactory(new ClientChannelPipelineFactory());
 		bootstrap.bind(new InetSocketAddress(11111));
