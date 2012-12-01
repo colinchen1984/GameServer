@@ -1,5 +1,6 @@
 package network;
 
+import network.c2gpacket.C2GPacketFactory;
 import network.c2gpacket.ClientPacketHandler;
 import org.jboss.netty.buffer.HeapChannelBufferFactory;
 import org.jboss.netty.channel.*;
@@ -11,6 +12,8 @@ import org.jboss.netty.handler.execution.OrderedMemoryAwareThreadPoolExecutor;
 import java.nio.ByteOrder;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
+
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,6 +30,9 @@ public class ClientChannelPipelineFactory implements ChannelPipelineFactory
 			new OrderedMemoryAwareThreadPoolExecutor(
 					5, 1000000, 10000000, 100,
 					TimeUnit.MILLISECONDS);
+	static{
+		upventExecutor.setThreadFactory(new PacketProcessThread.PacketProcessThreadFactory(C2GPacketFactory.class));
+	}
 
 	private class SocketSetConfig extends SimpleChannelUpstreamHandler
 	{
@@ -61,8 +67,10 @@ public class ClientChannelPipelineFactory implements ChannelPipelineFactory
 		//默認不通過該pool來處理下行數據，而是直接在上行數據的的處理函數中直接發送下行數據
 		//如果確實需要線程吃來處理下行數據，可以創建新的線程池
 		//但是不推薦在上行數據處理池內同時處理下行數據e
-		//因爲該池是order的池，同時處理上下行數據，會導致上行包的處理杯下行包影響
-		p.addLast("Excutor", new ExecutionHandler(upventExecutor));
+		//因爲該池是order的池，同時處理上下行數據，會導致上行包的處理被下行包影響
+		//要求
+		ExecutionHandler executionHandler = new ExecutionHandler(upventExecutor, false, true);
+		p.addLast("Excutor", executionHandler);
 		p.addLast("Packet Handler", new ClientPacketHandler());
 		return p;  //To change body of implemented methods use File | Settings | File Templates.
 	}

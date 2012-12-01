@@ -1,5 +1,6 @@
 package network;
 
+import network.l2gpacket.L2GPacketFactory;
 import network.l2gpacket.LoginPacketHandler;
 import org.jboss.netty.buffer.HeapChannelBufferFactory;
 import org.jboss.netty.channel.*;
@@ -25,6 +26,9 @@ public class LoginChannelPipelineFactory implements ChannelPipelineFactory
 			new OrderedMemoryAwareThreadPoolExecutor(
 					5, 1000000, 10000000, 100,
 					TimeUnit.MILLISECONDS);
+	{
+		upventExecutor.setThreadFactory(new PacketProcessThread.PacketProcessThreadFactory(L2GPacketFactory.class));
+	}
 
 	private class SocketSetConfig extends SimpleChannelUpstreamHandler
 	{

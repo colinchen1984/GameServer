@@ -14,6 +14,10 @@ public class L2GPacketFactory extends PacketFactory
 	{
 
 	}
+	public L2GPacketFactory()
+	{
+		this(true);
+	}
 
 	public L2GPacketFactory(boolean useCachePacket)
 	{

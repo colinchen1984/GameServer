@@ -14,14 +14,11 @@ import java.util.Map;
 public class PacketFactory
 {
 	final Map<Short, Packet> packetFactory = new HashMap<Short, Packet>(128);
-	Map<Thread, Map<Short, Packet>> cachedPacketFactory = null;
+	boolean useCachePacket = false;
 
 	public PacketFactory(boolean useCachePacket)
 	{
-		if(useCachePacket)
-		{
-			cachedPacketFactory = new HashMap<Thread, Map<Short, Packet>>(8);
-		}
+		this.useCachePacket = useCachePacket;
 	}
 
 	//單獨爲每一個線程創建一個專屬與該線程的packet map
@@ -31,35 +28,14 @@ public class PacketFactory
 	public Packet getPacketByID(short packetid)
 	{
 		final Packet packet = packetFactory.get(packetid);
-		if(null == packet)
+		final Packet result;
+		if(null == packet || useCachePacket)
 		{
-			return packet;
+			result = packet;
 		}
-
-		if(null == cachedPacketFactory)
-		{
-			return packet.getPacket();
-		}
-
-		final Thread thread = Thread.currentThread();
-		Map<Short, Packet> packetMap = cachedPacketFactory.get(thread);
-		Packet result;
-		if(null == packetMap)
-		{
-			packetMap = new HashMap<Short, Packet>(128);
-			synchronized (cachedPacketFactory)
-			{
-				cachedPacketFactory.put(thread, packetMap);
-			}
-			result = packet.getPacket();
-			packetMap.put(packetid, result);
-			return result;
-		}
-		result = packetMap.get(packetid);
-		if(null == result)
+		else
 		{
 			result = packet.getPacket();
-			packetMap.put(packetid, result);
 		}
 		return result;
 

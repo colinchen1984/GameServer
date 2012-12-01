@@ -15,6 +15,11 @@ public class C2GPacketFactory extends PacketFactory
 		this.regiestePacket(new C2GLatencyPacket());
 	}
 
+	public C2GPacketFactory()
+	{
+		this(true);
+	}
+
 	public C2GPacketFactory(boolean useCachePacket)
 	{
 		super(useCachePacket);

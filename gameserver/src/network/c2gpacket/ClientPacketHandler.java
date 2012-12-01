@@ -1,7 +1,7 @@
 package network.c2gpacket;
 
 import network.Packet;
-import network.PacketFactory;
+import network.PacketProcessThread;
 import network.ReceivedPacketHanlder;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.ExceptionEvent;
@@ -15,12 +15,11 @@ import org.jboss.netty.channel.ExceptionEvent;
  */
 public class ClientPacketHandler extends ReceivedPacketHanlder
 {
-	private static PacketFactory packetFactory = new C2GPacketFactory(false);
-
 	@Override
 	protected Packet getPacketByID(short id)
 	{
-		return packetFactory.getPacketByID(id);
+		PacketProcessThread thread = (PacketProcessThread) Thread.currentThread();
+		return thread.getPacketFactory().getPacketByID(id);
 	}
 
 	@Override
