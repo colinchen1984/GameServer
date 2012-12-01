@@ -1,7 +1,7 @@
 package network.c2gpacket;
 
 import network.Packet;
-import network.PacketProcessThread;
+import thread.PacketProcessThread;
 import network.ReceivedPacketHanlder;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.ExceptionEvent;

@@ -1,4 +1,6 @@
-package network;
+package thread;
+
+import network.PacketFactory;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
