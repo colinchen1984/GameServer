@@ -14,24 +14,20 @@ import org.jboss.netty.channel.SimpleChannelUpstreamHandler;
  * Time: 下午10:47
  * To change this template use File | Settings | File Templates.
  */
-public abstract class ReceivedPacketHanlder extends SimpleChannelUpstreamHandler
-{
+public abstract class ReceivedPacketHanlder extends SimpleChannelUpstreamHandler{
 	private static Log log = LogFactory.getLog(ReceivedPacketHanlder.class);
 
 	@Override
-	public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception
-	{
+	public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception{
 		Object message = e.getMessage();
-		if(!(message instanceof ChannelBuffer))
-		{
+		if(!(message instanceof ChannelBuffer)){
 			throw new RuntimeException("PacketHandler can't handle message which type is" + message.getClass().getName());
 		}
-		ChannelBuffer buffer = (ChannelBuffer)message;
+		ChannelBuffer buffer = (ChannelBuffer) message;
 		short packetDataLength = buffer.readShort();
 		short packetID = buffer.readShort();
 		ReceivedPacket packet = (ReceivedPacket) getPacketByID(packetID);
-		if(null == packet)
-		{
+		if(null == packet){
 			log.warn("Unkown packet with id " + packetID + "and data length is " + packetDataLength);
 			return;
 		}

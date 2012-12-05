@@ -11,13 +11,12 @@ import java.net.InetSocketAddress;
  * Time: 下午9:52
  * To change this template use File | Settings | File Templates.
  */
-public class GameServer
-{
+public class GameServer{
 	static final private ServerBootstrap bootstrap = new ServerBootstrap(
 			new NioServerSocketChannelFactory());
+
 	//static final private ClientBootstrap logintrap = new ClientBootstrap(new NioClientSocketChannelFactory());
-	public static void main(String[] args) throws Exception
-	{
+	public static void main(String[] args) throws Exception{
 
 		//读取各种配置
 		//初始化资源

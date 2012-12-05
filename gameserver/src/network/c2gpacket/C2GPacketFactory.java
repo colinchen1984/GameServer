@@ -9,19 +9,16 @@ import network.PacketFactory;
  * Time: 下午4:20
  * To change this template use File | Settings | File Templates.
  */
-public class C2GPacketFactory extends PacketFactory
-{
+public class C2GPacketFactory extends PacketFactory{
 	{
 		this.regiestePacket(new C2GLatencyPacket());
 	}
 
-	public C2GPacketFactory()
-	{
+	public C2GPacketFactory(){
 		this(true);
 	}
 
-	public C2GPacketFactory(boolean useCachePacket)
-	{
+	public C2GPacketFactory(boolean useCachePacket){
 		super(useCachePacket);
 	}
 }

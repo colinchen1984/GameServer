@@ -14,25 +14,21 @@ import org.jboss.netty.channel.Channel;
  * Time: 上午10:27
  * To change this template use File | Settings | File Templates.
  */
-public class C2GLatencyPacket extends ReceivedPacket
-{
+public class C2GLatencyPacket extends ReceivedPacket{
 	@Override
-	public short getPacketID()
-	{
+	public short getPacketID(){
 		return PacketID.C2GLatencyPacket;
 	}
 
 	private long sendTime;
 
 	@Override
-	public void readFromBuffer(ChannelBuffer buff)
-	{
+	public void readFromBuffer(ChannelBuffer buff){
 		sendTime = buff.readLong();
 	}
 
 	@Override
-	public void run()
-	{
+	public void run(){
 		Channel channel = getChannel();
 		SendPacket packet = new G2CLatencyPacket(sendTime);
 		packet.send(channel);

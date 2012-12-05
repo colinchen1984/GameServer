@@ -12,8 +12,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Time: 下午5:50
  * To change this template use File | Settings | File Templates.
  */
-public class PacketProcessThread extends Thread {
+public class PacketProcessThread extends Thread{
 	private PacketFactory packetFactory = null;
+
 	public PacketProcessThread(PacketFactory factory, Runnable runnable){
 		super(runnable);
 		this.packetFactory = factory;
@@ -26,20 +27,21 @@ public class PacketProcessThread extends Thread {
 	static public class PacketProcessThreadFactory implements ThreadFactory{
 		private Class factoryType = null;
 		static AtomicInteger count = new AtomicInteger(0);
+
 		public PacketProcessThreadFactory(Class factoryType){
 			this.factoryType = factoryType;
 		}
 
 		@Override
-		public Thread newThread(Runnable r) {
+		public Thread newThread(Runnable r){
 			Thread result = null;
-			try {
-				result = new PacketProcessThread((PacketFactory)factoryType.newInstance(), r);
+			try{
+				result = new PacketProcessThread((PacketFactory) factoryType.newInstance(), r);
 				result.setName("thread " + factoryType.getName() + count.addAndGet(1));
-			} catch(InstantiationException e) {
+			}catch(InstantiationException e){
 				e.printStackTrace();
-			} catch(IllegalAccessException e) {
-				e.printStackTrace(); 
+			}catch(IllegalAccessException e){
+				e.printStackTrace();
 			}
 			return result;
 		}

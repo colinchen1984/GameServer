@@ -11,13 +11,11 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 
-public class PacketFactory
-{
+public class PacketFactory{
 	final Map<Short, Packet> packetFactory = new HashMap<Short, Packet>(128);
 	boolean useCachePacket = false;
 
-	public PacketFactory(boolean useCachePacket)
-	{
+	public PacketFactory(boolean useCachePacket){
 		this.useCachePacket = useCachePacket;
 	}
 
@@ -25,28 +23,22 @@ public class PacketFactory
 	//在每個線程處理網絡包時，同樣的ID的網絡包在一個線程內
 	//的任意時刻指可能出現一次，所以可以通過cachedPacketFactory
 	//來避免不斷的創建新的Packet object
-	public Packet getPacketByID(short packetid)
-	{
+	public Packet getPacketByID(short packetid){
 		final Packet packet = packetFactory.get(packetid);
 		final Packet result;
-		if(null == packet || useCachePacket)
-		{
+		if(null == packet || useCachePacket){
 			result = packet;
-		}
-		else
-		{
+		}else{
 			result = packet.getPacket();
 		}
 		return result;
 
 	}
 
-	public void regiestePacket(Packet packet) throws RuntimeException
-	{
+	public void regiestePacket(Packet packet) throws RuntimeException{
 		Short packetID = packet.getPacketID();
 		Packet old = packetFactory.get(packetID);
-		if(null != old)
-		{
+		if(null != old){
 			throw new RuntimeException("packet id " + packetID + " is registed with packet " + old.getClass().getName());
 		}
 		packetFactory.put(packetID, packet);

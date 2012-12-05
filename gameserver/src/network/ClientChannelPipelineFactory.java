@@ -15,7 +15,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 
-
 /**
  * Created with IntelliJ IDEA.
  * User: colin
@@ -23,43 +22,37 @@ import java.util.concurrent.atomic.AtomicLong;
  * Time: 下午9:56
  * To change this template use File | Settings | File Templates.
  */
-public class ClientChannelPipelineFactory implements ChannelPipelineFactory
-{
+public class ClientChannelPipelineFactory implements ChannelPipelineFactory{
 	static AtomicLong test = new AtomicLong(0);
 	//为网络包的执行添加线程池
 	final static OrderedMemoryAwareThreadPoolExecutor upventExecutor =
 			new OrderedMemoryAwareThreadPoolExecutor(
 					5, 1000000, 10000000, 100,
 					TimeUnit.MILLISECONDS);
+
 	static{
 		upventExecutor.setThreadFactory(new PacketProcessThread.PacketProcessThreadFactory(C2GPacketFactory.class));
 	}
 
-	private class SocketSetConfig extends SimpleChannelUpstreamHandler
-	{
+	private class SocketSetConfig extends SimpleChannelUpstreamHandler{
 		@Override
-		public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception
-		{
+		public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception{
 			DefaultSocketChannelConfig config = (DefaultSocketChannelConfig) e.getChannel().getConfig();
-			if(null != config)
-			{
+			if(null != config){
 				//将buffer设为小字节序
 				config.setBufferFactory(HeapChannelBufferFactory.getInstance(ByteOrder.LITTLE_ENDIAN));
 				//设置buffer大小
 				config.setReceiveBufferSize(1024 << 3);
 				config.setSendBufferSize(1024 << 3);
 				e.getChannel().setAttachment(new Long(test.incrementAndGet()));
-			}
-			else
-			{
+			}else{
 				e.getChannel().close();
 			}
 		}
 	}
 
 	@Override
-	public ChannelPipeline getPipeline() throws Exception
-	{
+	public ChannelPipeline getPipeline() throws Exception{
 		//添加确认包长度Pipe
 		ChannelPipeline p = Channels.pipeline();
 		p.addLast("SocketConfig", new SocketSetConfig());

@@ -10,21 +10,16 @@ import org.jboss.netty.channel.Channel;
  * Time: 下午10:58
  * To change this template use File | Settings | File Templates.
  */
-public abstract class ReceivedPacket implements Packet
-{
+public abstract class ReceivedPacket implements Packet{
 	private Channel channel;
 	private final String packetName = this.getClass().getName();
 
 
-	public Packet getPacket()
-	{
+	public Packet getPacket(){
 		Packet result = null;
-		try
-		{
-			result = (Packet)super.clone();
-		}
-		catch(CloneNotSupportedException e)
-		{
+		try{
+			result = (Packet) super.clone();
+		}catch(CloneNotSupportedException e){
 			e.printStackTrace();
 			result = null;
 		}
@@ -32,8 +27,7 @@ public abstract class ReceivedPacket implements Packet
 	}
 
 	@Override
-	public String getPacketName()
-	{
+	public String getPacketName(){
 		return packetName;
 	}
 
@@ -41,13 +35,11 @@ public abstract class ReceivedPacket implements Packet
 
 	public abstract void run();
 
-	public void setChannel(Channel channel)
-	{
+	public void setChannel(Channel channel){
 		this.channel = channel;
 	}
 
-	protected Channel getChannel()
-	{
+	protected Channel getChannel(){
 		return channel;
 	}
 }

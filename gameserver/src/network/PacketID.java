@@ -7,16 +7,11 @@ package network;
  * Time: 上午11:52
  * To change this template use File | Settings | File Templates.
  */
-public class PacketID
-{
+public class PacketID{
 	public static final short C2GLatencyPacket = 0;
 	public static final short G2CLatencyPacket = 1;
 
 
-
-
-
-
 	public static final short split = 20000;
-	public static final short G2LTestPacket= 20001;
+	public static final short G2LTestPacket = 20001;
 }

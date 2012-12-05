@@ -11,34 +11,30 @@ import network.SendPacket;
  * Time: 下午5:25
  * To change this template use File | Settings | File Templates.
  */
-public class G2CLatencyPacket extends SendPacket
-{
+public class G2CLatencyPacket extends SendPacket{
 
 	private long sendtime = 0;
 	private final String packetName = this.getClass().getName();
-	public G2CLatencyPacket(long sendtime)
-	{
+
+	public G2CLatencyPacket(long sendtime){
 		this.sendtime = sendtime;
 	}
 
 	@Override
-	public String getPacketName()
-	{
+	public String getPacketName(){
 		return packetName;
 	}
 
 	@Override
-	public short getPacketID()
-	{
+	public short getPacketID(){
 		return PacketID.G2CLatencyPacket;
 	}
 
 	@Override
-	protected void writeData2Buffer(PacketIOHelper buffer)
-	{
+	protected void writeData2Buffer(PacketIOHelper buffer){
 		buffer.writeString("chenlintest");
 		buffer.writeLong(sendtime);
-  		buffer.writeLong(0);
+		buffer.writeLong(0);
 	}
 
 }

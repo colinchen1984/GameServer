@@ -10,25 +10,19 @@ import org.jboss.netty.channel.Channel;
  * Time: 下午3:53
  * To change this template use File | Settings | File Templates.
  */
-public abstract class SendPacket implements Packet, Cloneable
-{
-	public Packet getPacket()
-	{
+public abstract class SendPacket implements Packet, Cloneable{
+	public Packet getPacket(){
 		Packet result = null;
-		try
-		{
+		try{
 			result = (Packet) super.clone();
-		}
-		catch(CloneNotSupportedException e)
-		{
+		}catch(CloneNotSupportedException e){
 			e.printStackTrace();
 			result = null;
 		}
 		return result;
 	}
 
-	public void send(Channel channel)
-	{
+	public void send(Channel channel){
 		PacketIOHelper helper = new PacketIOHelper();
 		writeData2Buffer(helper);
 		int needBytes = helper.getNeedBytes() + 4;
