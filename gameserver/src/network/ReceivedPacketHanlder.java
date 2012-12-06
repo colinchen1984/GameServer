@@ -6,6 +6,7 @@ import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.MessageEvent;
 import org.jboss.netty.channel.SimpleChannelUpstreamHandler;
+import player.Player;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,7 +33,7 @@ public abstract class ReceivedPacketHanlder extends SimpleChannelUpstreamHandler
 			return;
 		}
 		log.info("Receive " + packet.getPacketName() + " from " + e.getChannel().getAttachment());
-		packet.setChannel(e.getChannel());
+		packet.setPlayer((Player) e.getChannel().getAttachment());
 		packet.readFromBuffer(buffer);
 		packet.run();
 	}

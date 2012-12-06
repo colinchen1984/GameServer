@@ -108,6 +108,7 @@
         <JAVADOC />
         <SOURCES>
           <root url="jar://$MODULE_DIR$/libssrc/netty-3.5.7.Final.zip!/netty-3.5.7.Final/src/main/java" />
+          <root url="jar://$MODULE_DIR$/libssrc/netty-3.5.7.Final-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

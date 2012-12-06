@@ -2,6 +2,7 @@ package network;
 
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.channel.Channel;
+import player.Player;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,7 +12,7 @@ import org.jboss.netty.channel.Channel;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class ReceivedPacket implements Packet{
-	private Channel channel;
+	private Player player;
 	private final String packetName = this.getClass().getName();
 
 
@@ -35,11 +36,11 @@ public abstract class ReceivedPacket implements Packet{
 
 	public abstract void run();
 
-	public void setChannel(Channel channel){
-		this.channel = channel;
+	public void setPlayer(Player player){
+		this.player = player;
 	}
 
-	protected Channel getChannel(){
-		return channel;
+	protected Player getPlayer(){
+		return player;
 	}
 }

@@ -8,6 +8,7 @@ import org.jboss.netty.channel.socket.DefaultSocketChannelConfig;
 import org.jboss.netty.handler.codec.frame.LengthFieldBasedFrameDecoder;
 import org.jboss.netty.handler.execution.ExecutionHandler;
 import org.jboss.netty.handler.execution.OrderedMemoryAwareThreadPoolExecutor;
+import player.Player;
 import thread.PacketProcessThread;
 
 import java.nio.ByteOrder;
@@ -23,7 +24,6 @@ import java.util.concurrent.atomic.AtomicLong;
  * To change this template use File | Settings | File Templates.
  */
 public class ClientChannelPipelineFactory implements ChannelPipelineFactory{
-	static AtomicLong test = new AtomicLong(0);
 	//为网络包的执行添加线程池
 	final static OrderedMemoryAwareThreadPoolExecutor upventExecutor =
 			new OrderedMemoryAwareThreadPoolExecutor(
@@ -44,7 +44,8 @@ public class ClientChannelPipelineFactory implements ChannelPipelineFactory{
 				//设置buffer大小
 				config.setReceiveBufferSize(1024 << 3);
 				config.setSendBufferSize(1024 << 3);
-				e.getChannel().setAttachment(new Long(test.incrementAndGet()));
+				Player player = Player.getPlayer(e.getChannel());
+				e.getChannel().setAttachment(player);
 			}else{
 				e.getChannel().close();
 			}
