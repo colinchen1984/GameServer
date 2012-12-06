@@ -29,7 +29,7 @@ public class C2GLatencyPacket extends ReceivedPacket{
 
 	@Override
 	public void run(){
-		Channel channel = getChannel();
+		Channel channel = getPlayer().getChannel();
 		SendPacket packet = new G2CLatencyPacket(sendTime);
 		packet.send(channel);
 
