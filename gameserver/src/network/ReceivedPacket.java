@@ -1,7 +1,6 @@
 package network;
 
 import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.channel.Channel;
 import player.Player;
 
 /**

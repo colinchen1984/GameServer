@@ -13,7 +13,6 @@ final public class Player{
 	private Channel channel;
 
 
-
 	public static Player getPlayer(Channel channel){
 		Player result = new Player();
 		result.setChannel(channel);

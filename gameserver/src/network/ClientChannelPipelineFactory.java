@@ -13,7 +13,6 @@ import thread.PacketProcessThread;
 
 import java.nio.ByteOrder;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicLong;
 
 
 /**
