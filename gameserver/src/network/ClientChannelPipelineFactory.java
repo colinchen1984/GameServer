@@ -1,7 +1,7 @@
 package network;
 
-import network.c2gpacket.C2GPacketFactory;
-import network.c2gpacket.ClientPacketHandler;
+import network.cgpacket.CGPacketFactory;
+import network.cgpacket.ClientPacketHandler;
 import org.jboss.netty.buffer.HeapChannelBufferFactory;
 import org.jboss.netty.channel.*;
 import org.jboss.netty.channel.socket.DefaultSocketChannelConfig;
@@ -30,7 +30,7 @@ public class ClientChannelPipelineFactory implements ChannelPipelineFactory{
 					TimeUnit.MILLISECONDS);
 
 	static{
-		upventExecutor.setThreadFactory(new PacketProcessThread.PacketProcessThreadFactory(C2GPacketFactory.class));
+		upventExecutor.setThreadFactory(new PacketProcessThread.PacketProcessThreadFactory(CGPacketFactory.class));
 	}
 
 	private class SocketSetConfig extends SimpleChannelUpstreamHandler{

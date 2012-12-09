@@ -21,7 +21,7 @@ final public class Player implements Poolable{
 				return new Player();
 			}
 		},
-				10, GenericObjectPool.WHEN_EXHAUSTED_GROW, 10);
+		10, GenericObjectPool.WHEN_EXHAUSTED_GROW, 10);
 	}
 	private Channel channel;
 

@@ -1,4 +1,4 @@
-package network.g2cpacket;
+package network.cgpacket;
 
 import network.PacketID;
 import network.PacketIOHelper;
@@ -13,17 +13,16 @@ import network.SendPacket;
  */
 public class G2CLatencyPacket extends SendPacket{
 
-	private long sendtime = 0;
-	private final String packetName = this.getClass().getName();
+    private long sendtime = 0;
 
-	public G2CLatencyPacket(long sendtime){
-		this.sendtime = sendtime;
-	}
+    public void setSendtime(long sendtime) {
+        this.sendtime = sendtime;
+    }
 
-	@Override
-	public String getPacketName(){
-		return packetName;
-	}
+	public G2CLatencyPacket(PacketIOHelper sendHelper){
+        super(sendHelper);
+    }
+
 
 	@Override
 	public short getPacketID(){

@@ -1,9 +1,8 @@
-package network.c2gpacket;
+package network.cgpacket;
 
+import network.PacketFactory;
 import network.PacketID;
 import network.ReceivedPacket;
-import network.SendPacket;
-import network.g2cpacket.G2CLatencyPacket;
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.channel.Channel;
 
@@ -15,8 +14,12 @@ import org.jboss.netty.channel.Channel;
  * To change this template use File | Settings | File Templates.
  */
 public class C2GLatencyPacket extends ReceivedPacket{
-	@Override
-	public short getPacketID(){
+    public C2GLatencyPacket(PacketFactory packetFactory) {
+        super(packetFactory);
+    }
+
+    @Override
+    public short getPacketID(){
 		return PacketID.C2GLatencyPacket;
 	}
 
@@ -30,8 +33,9 @@ public class C2GLatencyPacket extends ReceivedPacket{
 	@Override
 	public void run(){
 		Channel channel = getPlayer().getChannel();
-		SendPacket packet = new G2CLatencyPacket(sendTime);
-		packet.send(channel);
+        G2CLatencyPacket packet = (G2CLatencyPacket) getPacketFactory().getPacketByID(PacketID.G2CLatencyPacket);
+        packet.setSendtime(sendTime);
+        packet.send(channel);
 
 	}
 

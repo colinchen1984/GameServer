@@ -13,9 +13,17 @@ import player.Player;
 public abstract class ReceivedPacket implements Packet{
 	private Player player;
 	private final String packetName = this.getClass().getName();
+    private final PacketFactory packetFactory;
 
+    public PacketFactory getPacketFactory() {
+        return packetFactory;
+    }
 
-	public Packet getPacket(){
+    protected ReceivedPacket(PacketFactory packetFactory) {
+        this.packetFactory = packetFactory;
+    }
+
+    public Packet getPacket(){
 		Packet result = null;
 		try{
 			result = (Packet) super.clone();

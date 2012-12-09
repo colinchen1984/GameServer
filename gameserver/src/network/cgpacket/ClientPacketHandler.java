@@ -1,4 +1,4 @@
-package network.c2gpacket;
+package network.cgpacket;
 
 import network.Packet;
 import network.ReceivedPacketHanlder;

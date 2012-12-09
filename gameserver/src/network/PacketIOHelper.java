@@ -113,7 +113,6 @@ public class PacketIOHelper{
 			writeShort((short) 0);
 			return;
 		}
-
 		byte[] utf8 = str.getBytes(utf8Charset);
 		writeShort((short) utf8.length);
 		writeBytes(utf8, utf8.length);
