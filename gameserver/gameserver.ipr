@@ -38,12 +38,7 @@
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
-    <file url="file://$PROJECT_DIR$/../../javolution/trunk/javolution" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../javolution/trunk/javolution/core-cpp" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../javolution/trunk/javolution/core-java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../javolution/trunk/javolution/test-cpp" charset="UTF-8" />
-  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
