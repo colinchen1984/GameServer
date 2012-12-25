@@ -108,6 +108,43 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../commons/libs/mina-core-2.0.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-example/src/test/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-example/src/main/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-integration-jmx/src/main/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-filter-compression/src/test/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-filter-compression/src/main/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-integration-beans/src/test/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-integration-beans/src/main/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-core/src/test/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-core/src/main/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-http/src/test/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-http/src/main/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-statemachine/src/test/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-statemachine/src/main/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-integration-ognl/src/main/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-transport-serial/src/main/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-integration-xbean/src/test/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-integration-xbean/src/main/java" />
+          <root url="jar://$MODULE_DIR$/../commons/libssrc/apache-mina-2.0.7-src.zip!/apache-mina-2.0.7/src/mina-transport-apr/src/main/java" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../commons/libs/mina-transport-apr-2.0.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 
